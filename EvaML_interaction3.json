@@ -1,0 +1,152 @@
+	{
+    "_id": "a1000-b3000",
+    "nombre": "EvaML_interaction3",
+    "data": {
+    "node": [{
+    "key": 1000,
+    "name": "Light_8",
+    "type": "light",
+    "color": "lightblue",
+    "isGroup": false,
+    "group": "",
+    "lcolor": "#ffffff",
+    "state": "on",
+    "__gohashid": 0
+    },{
+    "key": 1001,
+    "name": "Talk_1",
+    "type": "speak",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": "Eu vou pensar em um número e você deve adivinhar qual foi.",
+    "__gohashid": 1
+    },{
+    "key": 1002,
+    "name": "Random_10",
+    "type": "random",
+    "color": "lightblue",
+    "isGroup": false,
+    "group": "",
+    "min": 1,
+    "max": 3,
+    "__gohashid": 2
+    },{
+    "key": 1003,
+    "name": "Talk_1",
+    "type": "speak",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": "Qual foi o numero?",
+    "__gohashid": 3
+    },{
+    "key": 1004,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 1,
+    "opt": 4,
+    "__gohashid": 4
+    },{
+    "key": 1005,
+    "name": "Light_8",
+    "type": "light",
+    "color": "lightblue",
+    "isGroup": false,
+    "group": "",
+    "lcolor": "#0000FF",
+    "state": "on",
+    "__gohashid": 5
+    },{
+    "key": 1006,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 1,
+    "opt": 4,
+    "__gohashid": 6
+    },{
+    "key": 1007,
+    "name": "Talk_1",
+    "type": "speak",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": "Parabéns! Você acertou!",
+    "__gohashid": 7
+    },{
+    "key": 1008,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 2,
+    "opt": 4,
+    "__gohashid": 8
+    },{
+    "key": 1009,
+    "name": "Light_8",
+    "type": "light",
+    "color": "lightblue",
+    "isGroup": false,
+    "group": "",
+    "lcolor": "#00FF00",
+    "state": "on",
+    "__gohashid": 9
+    },{
+    "key": 1010,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 2,
+    "opt": 4,
+    "__gohashid": 10
+    },{
+    "key": 1011,
+    "name": "Talk_1",
+    "type": "speak",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": "Parabéns! Você acertou!",
+    "__gohashid": 11
+    },{
+    "key": 1012,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 3,
+    "opt": 4,
+    "__gohashid": 12
+    },{
+    "key": 1013,
+    "name": "Light_8",
+    "type": "light",
+    "color": "lightblue",
+    "isGroup": false,
+    "group": "",
+    "lcolor": "#FF0000",
+    "state": "on",
+    "__gohashid": 13
+    },{
+    "key": 1014,
+    "name": "Condition_2",
+    "type": "if",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": 3,
+    "opt": 4,
+    "__gohashid": 14
+    },{
+    "key": 1015,
+    "name": "Talk_1",
+    "type": "speak",
+    "color": "lightblue",
+    "isGroup": false,
+    "text": "Parabéns! Você acertou!",
+    "__gohashid": 15
+    }],
+    "link": []
+    }
+    }
