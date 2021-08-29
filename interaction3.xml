@@ -1,12 +1,13 @@
 <!--<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="transform.xsl"?>
 -->
-<interaction id="a1000-b3000" name="EvaML_interaction3">
+<interaction id="a1000-b3000" name="EvaML_X">
 	<light state="on" color="#ffffff"/>
 	<talk>Eu vou pensar em um número e você deve adivinhar qual foi.</talk>
 	<random min="1" max="3"/>
 	<talk>Qual foi o numero?</talk>
 	<switch>
+
     	<case value="1">
         	<light state="on" color="#0000FF"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
@@ -19,6 +20,7 @@
 				</default>
 			</switch>
     	</case>
+
 		<case value="2">
      		<light state="on" color="#00FF00"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
@@ -31,6 +33,7 @@
 				</default>
 			</switch>
       	</case>
+
 		<case value="3">
      		<light state="on" color="#FF0000"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
@@ -42,6 +45,7 @@
 					<talk>Lamento, você errou. Eu pensei no número $-1</talk>
 				</default>
 			</switch>
-      	</case>
-   	</switch>
+		</case>
+		
+	</switch>
 </interaction>
