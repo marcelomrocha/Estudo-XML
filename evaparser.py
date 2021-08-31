@@ -4,49 +4,45 @@ import xml.etree.ElementTree as ET
 
 tree = ET.parse(sys.argv[1])  # arquivo de codigo xml
 root = tree.getroot()
-# block = root.findall('./block')
-
 output = ""
 key = 1000
 gohashid = 0
-contador = 1  # identifica o primeiro e o ultimo no
+inicio = True  # para nao iniciar com a virgula
 
 def block_process(root):
-    global output, contador
+    global output, inicio
     for command in root:
-        #if (contador != 1): output += ","  # imprime as virgulas
         if (command.tag == 'light'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += light_process(command)
         if (command.tag == 'wait'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += wait_process(command)
         if (command.tag == 'voice'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += voice_process(command)
         if (command.tag == 'talk'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += talk_process(command)
         if (command.tag == 'random'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += random_process(command)
         if (command.tag == 'eva-emotion'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += eva_emotion_process(command)
         if (command.tag == 'case'):
-            if (contador != 1): output += ",\n"
+            if (not inicio): output += ",\n"
             output += case_process(command)
             block_process(command)
         if (command.tag == 'switch'):
-            command.attrib['key'] = "switch"
             block_process(command)
-        contador = 2
+        inicio = False
 
 # head processing
 def head_process(root_element):
     root_element.attrib["key"] = 0
     init = """{
-  "_id": "a1000-b3000",
+  "_id": """ + '"' + root_element.attrib["id"] + '",' + """
   "nombre": """ + '"' + root_element.attrib['name'] + '",' + """
   "data": {
     "node": [
@@ -229,8 +225,6 @@ eva_db_dict["interaccion"].append(json.loads(output))
 # eva_db_dict["interaccion"].remove("EvaML_X")
 print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 
-# with open('db.json', 'w') as file:
-#    json.dump(eva_db_dict, file)
 
 def run_tree(root):
     for elem in root:
