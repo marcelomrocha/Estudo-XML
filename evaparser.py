@@ -15,25 +15,36 @@ def block_process(root):
         if (command.tag == 'light'):
             if (not inicio): output += ",\n"
             output += light_process(command)
+
         if (command.tag == 'wait'):
             if (not inicio): output += ",\n"
             output += wait_process(command)
+
         if (command.tag == 'voice'):
             if (not inicio): output += ",\n"
             output += voice_process(command)
+
         if (command.tag == 'talk'):
             if (not inicio): output += ",\n"
             output += talk_process(command)
+
         if (command.tag == 'random'):
             if (not inicio): output += ",\n"
             output += random_process(command)
+
+        if (command.tag == 'listen'):
+            if (not inicio): output += ",\n"
+            output += listen_process(command)
+
         if (command.tag == 'eva-emotion'):
             if (not inicio): output += ",\n"
             output += eva_emotion_process(command)
+
         if (command.tag == 'case'):
             if (not inicio): output += ",\n"
             output += case_process(command)
             block_process(command)
+
         if (command.tag == 'switch'):
             block_process(command)
         inicio = False
@@ -78,6 +89,25 @@ def light_process(light_command):
     gohashid += 1
     key += 1
     return light_node
+
+# listen node processing
+def listen_process(listen_command):
+    global gohashid, key
+    listen_command.attrib["key"] = key
+    listen_node = """      {
+        "key": """ + str(key) + """,
+        "name": "Listen_8",
+        "type": "listen",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "zzz",
+        "state": "zzz",
+        "__gohashid": """ + str(gohashid) + """
+      }"""
+    gohashid += 1
+    key += 1
+    return listen_node
 
 
 # talk node processing
@@ -219,6 +249,7 @@ for elem in eva_db_dict:
 print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 print(type(eva_db_dict["interaccion"]))
 
+print(output)
 # output é uma string. a função json.loads transforma a string em um dict
 eva_db_dict["interaccion"].append(json.loads(output))
 

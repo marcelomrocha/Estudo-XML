@@ -66,35 +66,46 @@
       },
       {
         "key": 1006,
+        "name": "Listen_8",
+        "type": "listen",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "zzz",
+        "state": "zzz",
+        "__gohashid": 6
+      },
+      {
+        "key": 1007,
         "name": "Condition_2",
         "type": "if",
         "color": "lightblue",
         "isGroup": false,
         "text": 1,
         "opt": 4,
-        "__gohashid": 6
+        "__gohashid": 7
       },
       {
-        "key": 1007,
+        "key": 1008,
         "name": "Talk_1",
         "type": "speak",
         "color": "lightblue",
         "isGroup": false,
         "text": "Parabéns! Você acertou!",
-        "__gohashid": 7
+        "__gohashid": 8
       },
       {
-        "key": 1008,
+        "key": 1009,
         "name": "Condition_2",
         "type": "if",
         "color": "lightblue",
         "isGroup": false,
         "text": 2,
         "opt": 4,
-        "__gohashid": 8
+        "__gohashid": 9
       },
       {
-        "key": 1009,
+        "key": 1010,
         "name": "Light_8",
         "type": "light",
         "color": "lightblue",
@@ -102,25 +113,17 @@
         "group": "",
         "lcolor": "#00FF00",
         "state": "on",
-        "__gohashid": 9
-      },
-      {
-        "key": 1010,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 2,
-        "opt": 4,
         "__gohashid": 10
       },
       {
         "key": 1011,
-        "name": "Talk_1",
-        "type": "speak",
+        "name": "Listen_8",
+        "type": "listen",
         "color": "lightblue",
         "isGroup": false,
-        "text": "Parabéns! Você acertou!",
+        "group": "",
+        "lcolor": "zzz",
+        "state": "zzz",
         "__gohashid": 11
       },
       {
@@ -129,19 +132,17 @@
         "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "text": 3,
+        "text": 2,
         "opt": 4,
         "__gohashid": 12
       },
       {
         "key": 1013,
-        "name": "Light_8",
-        "type": "light",
+        "name": "Talk_1",
+        "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "group": "",
-        "lcolor": "#FF0000",
-        "state": "on",
+        "text": "Parabéns! Você acertou!",
         "__gohashid": 13
       },
       {
@@ -156,12 +157,44 @@
       },
       {
         "key": 1015,
+        "name": "Light_8",
+        "type": "light",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#FF0000",
+        "state": "on",
+        "__gohashid": 15
+      },
+      {
+        "key": 1016,
+        "name": "Listen_8",
+        "type": "listen",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "zzz",
+        "state": "zzz",
+        "__gohashid": 16
+      },
+      {
+        "key": 1017,
+        "name": "Condition_2",
+        "type": "if",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": 3,
+        "opt": 4,
+        "__gohashid": 17
+      },
+      {
+        "key": 1018,
         "name": "Talk_1",
         "type": "speak",
         "color": "lightblue",
         "isGroup": false,
         "text": "Parabéns! Você acertou!",
-        "__gohashid": 15
+        "__gohashid": 18
       }
     ],
     "link": []
