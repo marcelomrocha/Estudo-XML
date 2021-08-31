@@ -1,6 +1,5 @@
 import sys
 import json
-import pickle
 import xml.etree.ElementTree as ET
 
 tree = ET.parse(sys.argv[1])  # arquivo de codigo xml
@@ -39,11 +38,13 @@ def block_process(root):
             output += case_process(command)
             block_process(command)
         if (command.tag == 'switch'):
+            command.attrib['key'] = "switch"
             block_process(command)
         contador = 2
 
 # head processing
 def head_process(root_element):
+    root_element.attrib["key"] = 0
     init = """{
   "_id": "a1000-b3000",
   "nombre": """ + '"' + root_element.attrib['name'] + '",' + """
@@ -66,6 +67,7 @@ def tail_process():
 # light node processing
 def light_process(light_command):
     global gohashid, key
+    light_command.attrib["key"] = key
     light_node = """      {
         "key": """ + str(key) + """,
         "name": "Light_8",
@@ -85,6 +87,7 @@ def light_process(light_command):
 # talk node processing
 def talk_process(talk_command):
     global gohashid, key
+    talk_command.attrib["key"] = key
     talk_node = """      {
         "key": """ + str(key) + """,
         "name": "Talk_1",
@@ -102,6 +105,7 @@ def talk_process(talk_command):
 # voice node processing
 def voice_process(voice_command):
     global gohashid, key
+    voice_command.attrib["key"] = key
     voice_node = """      {
         "key": """ + str(key) + """,
         "name": "Voice_1",
@@ -119,6 +123,7 @@ def voice_process(voice_command):
 # eva_emotion node processing
 def eva_emotion_process(eva_emotion_command):
     global gohashid, key
+    eva_emotion_command.attrib["key"] = key
     eva_emotion_node = """      {
       "key": """ + str(key) + """,
       "name": "Eva_Emotion_13",
@@ -139,6 +144,7 @@ def eva_emotion_process(eva_emotion_command):
 # random node processing
 def random_process(random_command):
     global gohashid, key
+    random_command.attrib["key"] = key
     random_node = """      {
         "key": """ + str(key) + """,
         "name": "Random_10",
@@ -158,6 +164,7 @@ def random_process(random_command):
 # condition node processing
 def case_process(case_command):
     global gohashid, key
+    case_command.attrib["key"] = key
     case_node = """      {
         "key": """ + str(key) + """,
         "name": "Condition_2",
@@ -176,6 +183,7 @@ def case_process(case_command):
 # wait node processing
 def wait_process(wait_command):
     global gohashid, key
+    wait_command.attrib["key"] = key
     wait_node = """      {
         "key": """ + str(key) + """,
         "name": "Wait_2",
@@ -190,7 +198,7 @@ def wait_process(wait_command):
     return wait_node
 
 
-# xml processing
+# xml processing (string concatenation)
 output += head_process(root)
 block_process(root)
 output += tail_process()
@@ -199,11 +207,15 @@ output += tail_process()
 file_out_name = root.attrib['name'] + '.json'
 file_out = open(file_out_name, "w")
 file_out.write(output)
+# file_out.write(output.encode('utf-8'))
 file_out.close()
 
 # inserting json file in lowdb interaction database
 dbfile = open('db.json', 'r')
+
+# transforma o arquivo de texto em um dict
 eva_db_dict = json.load(dbfile)
+
 print("List of registers types in db: ")
 print("--------------------------------------------")
 for elem in eva_db_dict:
@@ -211,10 +223,18 @@ for elem in eva_db_dict:
 print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 print(type(eva_db_dict["interaccion"]))
 
+# output é uma string. a função json.loads transforma a string em um dict
 eva_db_dict["interaccion"].append(json.loads(output))
+
 # eva_db_dict["interaccion"].remove("EvaML_X")
 print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 
-geeky_file = open('db2.json', 'w')
-geeky_file.write(str(eva_db_dict))
-geeky_file.close()
+# with open('db.json', 'w') as file:
+#    json.dump(eva_db_dict, file)
+
+def run_tree(root):
+    for elem in root:
+        if len(elem) != 0: run_tree(elem)
+        print(elem.tag, elem.attrib["key"])
+
+run_tree(root)
