@@ -10,37 +10,36 @@ root = tree.getroot()
 output = ""
 key = 1000
 gohashid = 0
-contador = 1  # identifica o primeiro e o ultimo no
+inicio = true  # para nao iniciar com a virgula
 
 def block_process(root):
     global output, contador
     for command in root:
-        #if (contador != 1): output += ","  # imprime as virgulas
         if (command.tag == 'light'):
-            if (contador != 1): output += ","
+            if (not inicio): output += ","
             output += light_process(command)
         if (command.tag == 'wait'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += wait_process(command)
         if (command.tag == 'voice'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += voice_process(command)
         if (command.tag == 'talk'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += talk_process(command)
         if (command.tag == 'random'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += random_process(command)
         if (command.tag == 'eva-emotion'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += eva_emotion_process(command)
         if (command.tag == 'case'):
-            if (contador != 1): output += ","
+            if (not inicio != 1): output += ","
             output += case_process(command)
             block_process(command)
         if (command.tag == 'switch'):
             block_process(command)
-        contador = 2
+        inicio = false
 
 # head processing
 def head_process(root_element):

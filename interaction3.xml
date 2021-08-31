@@ -1,7 +1,7 @@
 <!--<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="transform.xsl"?>
 -->
-<interaction id="a1000-b3000" name="EvaML_X">
+<interaction id="a1001-b3001" name="EvaML_X">
 	<light state="on" color="#ffffff"/>
 	<talk>Eu vou pensar em um número e você deve adivinhar qual foi.</talk>
 	<random min="1" max="3"/>
@@ -43,6 +43,5 @@
 				</default>
 			</switch>
 		</case>
-		
 	</switch>
 </interaction>
