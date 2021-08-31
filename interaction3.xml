@@ -7,8 +7,8 @@
 	<random min="1" max="3"/>
 	<talk>Qual foi o numero?</talk>
 	<switch>
-    	<case value="1">
-        	<light state="on" color="#0000FF"/>
+  	<case value="1">
+      <light state="on" color="#0000FF"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
 			<switch>
 				<case value="1">
@@ -18,9 +18,9 @@
 					<talk>Lamento, você errou. Eu pensei no número $-1</talk>
 				</default>
 			</switch>
-    	</case>
+  	</case>
 		<case value="2">
-     		<light state="on" color="#00FF00"/>
+     	<light state="on" color="#00FF00"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
 			<switch>
 				<case value="2">
@@ -30,9 +30,9 @@
 					<talk>Lamento, você errou. Eu pensei no número $-1</talk>
 				</default>
 			</switch>
-      	</case>
+    </case>
 		<case value="3">
-     		<light state="on" color="#FF0000"/>
+     	<light state="on" color="#FF0000"/>
 			<listen/> <!-- aguarda a resposta do usuário-->
 			<switch>
 				<case value="3">
