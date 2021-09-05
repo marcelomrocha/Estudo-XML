@@ -12,6 +12,10 @@ inicio = True  # para nao iniciar com a virgula
 def block_process(root):
     global output, inicio
     for command in root:
+        if (command.tag == 'audio'):
+            if (not inicio): output += ",\n"
+            output += audio_process(command)
+
         if (command.tag == 'light'):
             if (not inicio): output += ",\n"
             output += light_process(command)
@@ -20,9 +24,9 @@ def block_process(root):
             if (not inicio): output += ",\n"
             output += wait_process(command)
 
-        if (command.tag == 'voice'):
-            if (not inicio): output += ",\n"
-            output += voice_process(command)
+        # if (command.tag == 'voice'):
+        #     if (not inicio): output += ",\n"
+        #     output += voice_process(command)
 
         if (command.tag == 'talk'):
             if (not inicio): output += ",\n"
@@ -45,21 +49,29 @@ def block_process(root):
             output += case_process(command)
             block_process(command)
 
+        # switch is just an abstraction not a real node
         if (command.tag == 'switch'):
             block_process(command)
+
         inicio = False
 
-# head processing
+# head processing (generates the head of json file)
 def head_process(root_element):
-    root_element.attrib["key"] = 0
+    root_element.find("interaction").attrib["key"] = 0
     init = """{
-  "_id": """ + '"' + root_element.attrib["id"] + '",' + """
-  "nombre": """ + '"' + root_element.attrib['name'] + '",' + """
+  "_id": """ + '"' + root_element.find("interaction").attrib["id"] + '",' + """
+  "nombre": """ + '"' + root_element.find("interaction").attrib['name'] + '",' + """
   "data": {
     "node": [
 """
     return init
 
+# processing the settings nodes
+# always be the first node in the interaccion
+def settings_process(root_element):
+    return voice_process(root_element.find("settings").find("voice")) + ",\n"
+    # processar light-effects
+    # processar sound-effects
 
 # tail processing
 def tail_process():
@@ -70,6 +82,24 @@ def tail_process():
 }"""
     return tail
 
+
+# audio node processing
+def audio_process(audio_command):
+    global gohashid, key
+    audio_command.attrib["key"] = key
+    audio_node = """      {
+        "key": """ + str(key) + """,
+        "name": "Audio_0",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": """ + '"' + audio_command.attrib['source'] + '",' + """
+        "wait": """ + audio_command.attrib['wait'] + ',' + """
+        "__gohashid": """ + str(gohashid) + """
+      }"""
+    gohashid += 1
+    key += 1
+    return audio_node
 
 # light node processing
 def light_process(light_command):
@@ -138,7 +168,7 @@ def voice_process(voice_command):
         "type": "voice",
         "color": "lightblue",
         "isGroup": false,
-        "voice": "pt-BR_IsabelaV3Voice",""" + """
+        "voice": """ + '"' + voice_command.attrib['tone'] + '",' + """
         "__gohashid": """ + str(gohashid) + """
       }"""
     gohashid += 1
@@ -151,17 +181,17 @@ def eva_emotion_process(eva_emotion_command):
     global gohashid, key
     eva_emotion_command.attrib["key"] = key
     eva_emotion_node = """      {
-      "key": """ + str(key) + """,
-      "name": "Eva_Emotion_13",
-      "type": "emotion",
-      "color": "lightyellow",
-      "isGroup": false,
-      "group": "",
-      "emotion": """ + '"' + eva_emotion_command.attrib['emotion'] + '",' + """
-      "level": 0,
-      "speed": 0,
-      "__gohashid": """ + str(gohashid) + """
-    }"""
+        "key": """ + str(key) + """,
+        "name": "Eva_Emotion_13",
+        "type": "emotion",
+        "color": "lightyellow",
+        "isGroup": false,
+        "group": "",
+        "emotion": """ + '"' + eva_emotion_command.attrib['emotion'] + '",' + """
+        "level": 0,
+        "speed": 0,
+        "__gohashid": """ + str(gohashid) + """
+      }"""
     gohashid += 1
     key += 1
     return eva_emotion_node
@@ -205,7 +235,6 @@ def case_process(case_command):
     key += 1
     return case_node
 
-
 # wait node processing
 def wait_process(wait_command):
     global gohashid, key
@@ -223,14 +252,14 @@ def wait_process(wait_command):
     key += 1
     return wait_node
 
-
-# xml processing (string concatenation)
+# xml processing (string concatenation) 
 output += head_process(root)
-block_process(root)
+output += settings_process(root)
+block_process(root.find("interaction"))
 output += tail_process()
 
 # creating the json file
-file_out_name = root.attrib['name'] + '.json'
+file_out_name = root.find("interaction").attrib['name'] + '.json'
 file_out = open(file_out_name, "w")
 file_out.write(output)
 # file_out.write(output.encode('utf-8'))
@@ -242,24 +271,24 @@ dbfile = open('db.json', 'r')
 # transforma o arquivo de texto em um dict
 eva_db_dict = json.load(dbfile)
 
-print("List of registers types in db: ")
-print("--------------------------------------------")
-for elem in eva_db_dict:
-    print("*", elem)
-print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
-print(type(eva_db_dict["interaccion"]))
+# print("List of fields types in db: ")
+# print("--------------------------------------------")
+# for elem in eva_db_dict:
+#     print("*", elem)
+# print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
+# print(type(eva_db_dict["interaccion"]))
 
-print(output)
 # output é uma string. a função json.loads transforma a string em um dict
 eva_db_dict["interaccion"].append(json.loads(output))
 
 # eva_db_dict["interaccion"].remove("EvaML_X")
 print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 
+# exibe uma tabela de comandos e chaves
 
-def run_tree(root):
-    for elem in root:
-        if len(elem) != 0: run_tree(elem)
-        print(elem.tag, elem.attrib["key"])
-
-run_tree(root)
+# print("Element\t key")
+# def run_tree(root):
+#     for elem in root:
+#         if len(elem) != 0: run_tree(elem)
+#         if elem.tag != "switch": print(elem.tag + "\t", elem.attrib["key"])
+# run_tree(root)

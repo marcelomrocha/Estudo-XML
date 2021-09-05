@@ -5,26 +5,115 @@
     "node": [
       {
         "key": 1000,
+        "name": "Voice_1",
+        "type": "voice",
+        "color": "lightblue",
+        "isGroup": false,
+        "voice": "en_US_Emilyyyyy",
+        "__gohashid": 0
+      },
+      {
+        "key": 1001,
+        "name": "Wait_2",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1234,
+        "__gohashid": 1
+      },
+      {
+        "key": 1002,
+        "name": "Talk_1",
+        "type": "speak",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "Vou acender a luz vermelha e ficar com raiva",
+        "__gohashid": 2
+      },
+      {
+        "key": 1003,
         "name": "Light_8",
         "type": "light",
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "lcolor": "#ffffff",
+        "lcolor": "#ff0000",
         "state": "on",
-        "__gohashid": 0
+        "__gohashid": 3
       },
       {
-        "key": 1001,
+        "key": 1004,
+        "name": "Eva_Emotion_13",
+        "type": "emotion",
+        "color": "lightyellow",
+        "isGroup": false,
+        "group": "",
+        "emotion": "anger",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 4
+      },
+      {
+        "key": 1005,
+        "name": "Wait_2",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 2000,
+        "__gohashid": 5
+      },
+      {
+        "key": 1006,
         "name": "Talk_1",
         "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "text": "Eu vou pensar em um número e você deve adivinhar qual foi.",
-        "__gohashid": 1
+        "text": "Vou acender a luz azul e ficar triste",
+        "__gohashid": 6
       },
       {
-        "key": 1002,
+        "key": 1007,
+        "name": "Light_8",
+        "type": "light",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 7
+      },
+      {
+        "key": 1008,
+        "name": "Eva_Emotion_13",
+        "type": "emotion",
+        "color": "lightyellow",
+        "isGroup": false,
+        "group": "",
+        "emotion": "sad",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Wait_2",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 2000,
+        "__gohashid": 9
+      },
+      {
+        "key": 1010,
+        "name": "Talk_1",
+        "type": "speak",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "Vou sortear um número de 1 a 3",
+        "__gohashid": 10
+      },
+      {
+        "key": 1011,
         "name": "Random_10",
         "type": "random",
         "color": "lightblue",
@@ -32,108 +121,18 @@
         "group": "",
         "min": 1,
         "max": 3,
-        "__gohashid": 2
-      },
-      {
-        "key": 1003,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "Qual foi o numero?",
-        "__gohashid": 3
-      },
-      {
-        "key": 1004,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 1,
-        "opt": 4,
-        "__gohashid": 4
-      },
-      {
-        "key": 1005,
-        "name": "Light_8",
-        "type": "light",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "#0000FF",
-        "state": "on",
-        "__gohashid": 5
-      },
-      {
-        "key": 1006,
-        "name": "Listen_8",
-        "type": "listen",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "zzz",
-        "state": "zzz",
-        "__gohashid": 6
-      },
-      {
-        "key": 1007,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 1,
-        "opt": 4,
-        "__gohashid": 7
-      },
-      {
-        "key": 1008,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "Parabéns! Você acertou!",
-        "__gohashid": 8
-      },
-      {
-        "key": 1009,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 2,
-        "opt": 4,
-        "__gohashid": 9
-      },
-      {
-        "key": 1010,
-        "name": "Light_8",
-        "type": "light",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "#00FF00",
-        "state": "on",
-        "__gohashid": 10
-      },
-      {
-        "key": 1011,
-        "name": "Listen_8",
-        "type": "listen",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "zzz",
-        "state": "zzz",
         "__gohashid": 11
       },
       {
         "key": 1012,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
+        "name": "Eva_Emotion_13",
+        "type": "emotion",
+        "color": "lightyellow",
         "isGroup": false,
-        "text": 2,
-        "opt": 4,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
         "__gohashid": 12
       },
       {
@@ -142,39 +141,35 @@
         "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "text": "Parabéns! Você acertou!",
+        "text": "O número sorteado foi o $",
         "__gohashid": 13
       },
       {
         "key": 1014,
-        "name": "Condition_2",
-        "type": "if",
+        "name": "Talk_1",
+        "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "text": 3,
-        "opt": 4,
+        "text": "Até logo!",
         "__gohashid": 14
       },
       {
         "key": 1015,
-        "name": "Light_8",
-        "type": "light",
+        "name": "Condition_2",
+        "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "group": "",
-        "lcolor": "#FF0000",
-        "state": "on",
+        "text": 1,
+        "opt": 4,
         "__gohashid": 15
       },
       {
         "key": 1016,
-        "name": "Listen_8",
-        "type": "listen",
+        "name": "Wait_2",
+        "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "group": "",
-        "lcolor": "zzz",
-        "state": "zzz",
+        "time": 1000,
         "__gohashid": 16
       },
       {
@@ -183,17 +178,17 @@
         "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "text": 3,
+        "text": 2,
         "opt": 4,
         "__gohashid": 17
       },
       {
         "key": 1018,
-        "name": "Talk_1",
-        "type": "speak",
+        "name": "Wait_2",
+        "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "text": "Parabéns! Você acertou!",
+        "time": 2000,
         "__gohashid": 18
       }
     ],
