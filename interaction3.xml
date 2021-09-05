@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="transform.xsl"?>
 <evaml>
-
-	<interaction id="a1001-b3001" name="EvaML_X">
+	<settings>
+		<voice tone="en_US_Emily" />
+		<lighting-effects mode="on" />
+		<audio-effects mode="on" vol="100%" />
+	</settings>
+	<interaction id="a1001-b3001" name="EvaML_Nodes">
 		<wait duration="1234" />
-		<voice tone="isabela-brazil" />
 		<talk>Vou acender a luz vermelha e ficar com raiva</talk>
 		<light state="on" color="#ff0000" />
 		<eva-emotion emotion="anger" />
@@ -27,9 +30,4 @@
 			</case>
 		</switch>
 	</interaction>
-	<settings>
-		<voice tone="en_US_Emilyyyyy" />
-		<lighting-effects mode="on" />
-		<audio-effects mode="on" vol="100%" />
-  </settings>
 </evaml>

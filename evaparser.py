@@ -3,7 +3,7 @@ import json
 import xml.etree.ElementTree as ET
 
 tree = ET.parse(sys.argv[1])  # arquivo de codigo xml
-root = tree.getroot()
+root = tree.getroot() # evaml root node
 output = ""
 key = 1000
 gohashid = 0
@@ -24,6 +24,7 @@ def block_process(root):
             if (not inicio): output += ",\n"
             output += wait_process(command)
 
+        # the voice nodes are only process in the settings section
         # if (command.tag == 'voice'):
         #     if (not inicio): output += ",\n"
         #     output += voice_process(command)
@@ -56,11 +57,11 @@ def block_process(root):
         inicio = False
 
 # head processing (generates the head of json file)
-def head_process(root_element):
-    root_element.find("interaction").attrib["key"] = 0
+def head_process(node):
+    node.attrib["key"] = 0
     init = """{
-  "_id": """ + '"' + root_element.find("interaction").attrib["id"] + '",' + """
-  "nombre": """ + '"' + root_element.find("interaction").attrib['name'] + '",' + """
+  "_id": """ + '"' + node.attrib["id"] + '",' + """
+  "nombre": """ + '"' + node.attrib['name'] + '",' + """
   "data": {
     "node": [
 """
@@ -68,8 +69,8 @@ def head_process(root_element):
 
 # processing the settings nodes
 # always be the first node in the interaccion
-def settings_process(root_element):
-    return voice_process(root_element.find("settings").find("voice")) + ",\n"
+def settings_process(node):
+    return voice_process(node.find("voice")) + ",\n"
     # processar light-effects
     # processar sound-effects
 
@@ -252,9 +253,9 @@ def wait_process(wait_command):
     key += 1
     return wait_node
 
-# xml processing (string concatenation) 
-output += head_process(root)
-output += settings_process(root)
+# xml processing (string concatenation)
+output += head_process(root.find("interaction"))
+output += settings_process(root.find("settings"))
 block_process(root.find("interaction"))
 output += tail_process()
 
