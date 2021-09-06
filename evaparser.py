@@ -58,7 +58,7 @@ def block_process(root):
 
 # head processing (generates the head of json file)
 def head_process(node):
-    node.attrib["key"] = 0
+    node.attrib["key"] = str(0)
     init = """{
   "_id": """ + '"' + node.attrib["id"] + '",' + """
   "nombre": """ + '"' + node.attrib['name'] + '",' + """
@@ -87,7 +87,7 @@ def tail_process():
 # audio node processing
 def audio_process(audio_command):
     global gohashid, key
-    audio_command.attrib["key"] = key
+    audio_command.attrib["key"] = str(key)
     audio_node = """      {
         "key": """ + str(key) + """,
         "name": "Audio_0",
@@ -105,7 +105,7 @@ def audio_process(audio_command):
 # light node processing
 def light_process(light_command):
     global gohashid, key
-    light_command.attrib["key"] = key
+    light_command.attrib["key"] = str(key)
     light_node = """      {
         "key": """ + str(key) + """,
         "name": "Light_8",
@@ -124,7 +124,7 @@ def light_process(light_command):
 # listen node processing
 def listen_process(listen_command):
     global gohashid, key
-    listen_command.attrib["key"] = key
+    listen_command.attrib["key"] = str(key)
     listen_node = """      {
         "key": """ + str(key) + """,
         "name": "Listen_8",
@@ -144,7 +144,7 @@ def listen_process(listen_command):
 # talk node processing
 def talk_process(talk_command):
     global gohashid, key
-    talk_command.attrib["key"] = key
+    talk_command.attrib["key"] = str(key)
     talk_node = """      {
         "key": """ + str(key) + """,
         "name": "Talk_1",
@@ -162,7 +162,7 @@ def talk_process(talk_command):
 # voice node processing
 def voice_process(voice_command):
     global gohashid, key
-    voice_command.attrib["key"] = key
+    voice_command.attrib["key"] = str(key)
     voice_node = """      {
         "key": """ + str(key) + """,
         "name": "Voice_1",
@@ -180,7 +180,7 @@ def voice_process(voice_command):
 # eva_emotion node processing
 def eva_emotion_process(eva_emotion_command):
     global gohashid, key
-    eva_emotion_command.attrib["key"] = key
+    eva_emotion_command.attrib["key"] = str(key)
     eva_emotion_node = """      {
         "key": """ + str(key) + """,
         "name": "Eva_Emotion_13",
@@ -201,7 +201,7 @@ def eva_emotion_process(eva_emotion_command):
 # random node processing
 def random_process(random_command):
     global gohashid, key
-    random_command.attrib["key"] = key
+    random_command.attrib["key"] = str(key)
     random_node = """      {
         "key": """ + str(key) + """,
         "name": "Random_10",
@@ -221,7 +221,7 @@ def random_process(random_command):
 # condition node processing
 def case_process(case_command):
     global gohashid, key
-    case_command.attrib["key"] = key
+    case_command.attrib["key"] = str(key)
     case_node = """      {
         "key": """ + str(key) + """,
         "name": "Condition_2",
@@ -239,7 +239,7 @@ def case_process(case_command):
 # wait node processing
 def wait_process(wait_command):
     global gohashid, key
-    wait_command.attrib["key"] = key
+    wait_command.attrib["key"] = str(key)
     wait_node = """      {
         "key": """ + str(key) + """,
         "name": "Wait_2",
@@ -287,9 +287,12 @@ print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 
 # exibe uma tabela de comandos e chaves
 
+tree.write("teste.xml")
+for elem in root.find("settings").iter():
+    print(elem.tag, elem.attrib)
 # print("Element\t key")
 # def run_tree(root):
 #     for elem in root:
 #         if len(elem) != 0: run_tree(elem)
 #         if elem.tag != "switch": print(elem.tag + "\t", elem.attrib["key"])
-# run_tree(root)
+# run_tree(root.find("interaction"))

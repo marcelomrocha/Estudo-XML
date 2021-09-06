@@ -1,76 +1,20 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xml" href="transform.xsl"?>
--->
-<evaML>
+<evaml>
 	<settings>
 		<voice tone="en_US_Emily" />
-		<lighting-effects mode="on">
-		<music-play mode="on" />
-	</settings>
-	<interaction id="d0109-y2021" name="Eva_Presentation">
-		<voice tone="isabela-brazil" />
-		<talk>Vou acender a luz vermelha e ficar com raiva</talk>
-		<light state="on" color="#ff0000" />
-		<eva-emotion emotion="anger" />
-		<wait duration="2000" />
-		<talk>Vou acender a luz azul e ficar triste</talk>
-		<light state="on" color="#0000ff" />
-		<eva-emotion emotion="sad" />
-		<wait duration="2000" />
-		<talk>Vou sortear um número de 1 a 3</talk>
-		<random min="1" max="3" />
-		<eva-emotion emotion="joy" />
-		<talk>O número sorteado foi o $</talk>
-		<talk>Até logo!</talk>
-	</interaction>
-</evaML>
-
-<!-- -->
-<?xml version="1.0" encoding="UTF-8"?>
-<evaML>
-  <settings>
-    <!-- global interaction settings -->
-		<voice tone="en_US_Emily" />
 		<lighting-effects mode="on" />
-		<audio mode="on" vol="100%" />
-  </settings>
-  <interaction id="d0109-y2021" name="Eva_Presentation">
-    	<light state="on" color="#ffffff" /> <!-- acende a luz branca -->
-      <talk>Hi, I am the robot EVA</talk>
-    	<talk>I am a socially assistive robot</talk>
-    	<talk>I can talk and I can listen</talk>
-    	<!-- controlling the light -->
-    	<talk>I can also control the lighting.</talk>
-    	<light state="on" color="#ff0000" />
-    	<wait duration="1000" /> <!-- duração em ms -->
-    	<light state="on" color="#00ff00" />
-    	<wait duration="1000" /> <!-- duração em ms -->
-    	<light state="on" color="#0000ff" />
-    	<wait duration="1000" /> <!-- duração em ms -->
-      <light state="on" color="#ff0000" />
-    	<!-- expressing emotions through the eyes -->
-    	<talk>I can express emotions through my eyes</talk>
-    	<talk>I can express anger</talk>
-    	<light state="on" color="#ff0000" />
-      <eva-emotion emotion="anger" />
-      <wait duration="2000" />
-    	<talk>I can be sad</talk>
-    	<light state="on" color="#0000ff" />
-      <eva-emotion emotion="sad" />
-      <wait duration="2000" />
-    	<talk>I can be happy</talk>
-    	<light state="on" color="#ffff00" />
-      <eva-emotion emotion="happy" />
-      <wait duration="2000" />
-    	<!-- ------------------------>
-    	<eva-emotion emotion="neutral" />
-    	<talk>I can also recognize facial expressions through the camera located above my head</talk>
-    	<!-- playing souns and music -->
-    	<talk>I can play sounds</talk>
-    	<audio source="mario-sound" />
-    	<talk>And I can play music</talk>
-    	<audio source="the-four-seasons" /> <!-- de 3s a 5s de alguma música clássica (talvez Vivaldi) -->
-    	<eva-emotion emotion="happy" />
-    	<talk>Thanks! Bye!</talk>
-  </interaction>
-</evaML>
+		<audio-effects mode="on" vol="100%" />
+	</settings>
+	<interaction id="a1001-b3001" name="EvaML_Nodes">
+		<wait duration="1234" />
+		<switch>
+			<case value="1">
+				<wait duration="1000" />
+			</case>
+			<case value="2">
+				<wait duration="2000" />
+			</case>
+		</switch>
+	</interaction>
+</evaml>

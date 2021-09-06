@@ -1,0 +1,18 @@
+<evaml>
+	<settings>
+		<voice tone="en_US_Emily" key="1000" />
+		<lighting-effects mode="on" />
+		<audio-effects mode="on" vol="100%" />
+	</settings>
+	<interaction id="a1001-b3001" name="EvaML_Nodes" key="0">
+		<wait duration="1234" key="1001" />
+		<switch>
+			<case value="1" key="1002">
+				<light state="on" color="#0000ff" key="1003" />
+				<light state="on" color="#0000ff" key="1004" />
+				<light state="on" color="#0000ff" key="1005" />
+			</case>
+		</switch>
+		<wait duration="1234" key="1006" />
+	</interaction>
+</evaml>

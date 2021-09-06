@@ -23,11 +23,12 @@
       },
       {
         "key": 1002,
-        "name": "Talk_1",
-        "type": "speak",
+        "name": "Condition_2",
+        "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "text": "Vou acender a luz vermelha e ficar com raiva",
+        "text": 1,
+        "opt": 4,
         "__gohashid": 2
       },
       {
@@ -37,42 +38,12 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "lcolor": "#ff0000",
+        "lcolor": "#0000ff",
         "state": "on",
         "__gohashid": 3
       },
       {
         "key": 1004,
-        "name": "Eva_Emotion_13",
-        "type": "emotion",
-        "color": "lightyellow",
-        "isGroup": false,
-        "group": "",
-        "emotion": "anger",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 4
-      },
-      {
-        "key": 1005,
-        "name": "Wait_2",
-        "type": "wait",
-        "color": "lightblue",
-        "isGroup": false,
-        "time": 2000,
-        "__gohashid": 5
-      },
-      {
-        "key": 1006,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "Vou acender a luz azul e ficar triste",
-        "__gohashid": 6
-      },
-      {
-        "key": 1007,
         "name": "Light_8",
         "type": "light",
         "color": "lightblue",
@@ -80,116 +51,27 @@
         "group": "",
         "lcolor": "#0000ff",
         "state": "on",
-        "__gohashid": 7
+        "__gohashid": 4
       },
       {
-        "key": 1008,
-        "name": "Eva_Emotion_13",
-        "type": "emotion",
-        "color": "lightyellow",
+        "key": 1005,
+        "name": "Light_8",
+        "type": "light",
+        "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "emotion": "sad",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 8
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 5
       },
       {
-        "key": 1009,
+        "key": 1006,
         "name": "Wait_2",
         "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "time": 2000,
-        "__gohashid": 9
-      },
-      {
-        "key": 1010,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "Vou sortear um número de 1 a 3",
-        "__gohashid": 10
-      },
-      {
-        "key": 1011,
-        "name": "Random_10",
-        "type": "random",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "min": 1,
-        "max": 3,
-        "__gohashid": 11
-      },
-      {
-        "key": 1012,
-        "name": "Eva_Emotion_13",
-        "type": "emotion",
-        "color": "lightyellow",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 12
-      },
-      {
-        "key": 1013,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "O número sorteado foi o $",
-        "__gohashid": 13
-      },
-      {
-        "key": 1014,
-        "name": "Talk_1",
-        "type": "speak",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": "Até logo!",
-        "__gohashid": 14
-      },
-      {
-        "key": 1015,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 1,
-        "opt": 4,
-        "__gohashid": 15
-      },
-      {
-        "key": 1016,
-        "name": "Wait_2",
-        "type": "wait",
-        "color": "lightblue",
-        "isGroup": false,
-        "time": 1000,
-        "__gohashid": 16
-      },
-      {
-        "key": 1017,
-        "name": "Condition_2",
-        "type": "if",
-        "color": "lightblue",
-        "isGroup": false,
-        "text": 2,
-        "opt": 4,
-        "__gohashid": 17
-      },
-      {
-        "key": 1018,
-        "name": "Wait_2",
-        "type": "wait",
-        "color": "lightblue",
-        "isGroup": false,
-        "time": 2000,
-        "__gohashid": 18
+        "time": 1234,
+        "__gohashid": 6
       }
     ],
     "link": []
