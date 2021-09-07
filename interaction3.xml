@@ -7,8 +7,24 @@
 		<audio-effects mode="on" vol="100%" />
 	</settings>
 	<interaction id="a1001-b3001" name="EvaML_Nodes">
-		<light label="BEGIN" state="on" color="#FFFFFF" />
-		<wait duration="12345" />
-		<goto target="BEGIN" />
+	<light state="on" color="#ffffff"/>
+	<random label="BEGIN" min="1" max="3"/>
+	<talk>I will choose a number between 1 to 3</talk>
+	<switch>
+		<case value="1">
+			<talk>I choose the number $</talk>
+			<goto target="END"/>
+		</case>
+		<case value="2">
+			<talk>I choose the number $</talk>
+			<goto target="END"/>
+		</case>
+		<case value="3">
+			<talk>I choose the number $</talk>
+			<talk>And I will to restart the game. Let is go!</talk>
+			<goto target="BEGIN"/>
+		</case>
+	</switch>
+	<talk label="END">That is all folks</talk>
 	</interaction>
 </evaml>
