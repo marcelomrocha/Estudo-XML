@@ -12,6 +12,14 @@ print("numero de nodes no bloco principal da interacao: ", qtd)
 links = []
 
 def cria_link(node_from, node_to):
+    # node goto
+    if node_to.tag == "goto":
+        for elem in interaction.iter():
+            for at in elem.attrib:
+                if at == "label":
+                    if elem.attrib["label"] == node_to.attrib["target"]:
+                        links.append(node_from.attrib["key"] + "," + elem.attrib["key"])
+        return
     # um switch nunca pode ser from
     if node_from.tag == "switch": return
     # no "to" e uma folha, que nao contem filhos
@@ -63,5 +71,7 @@ def saida_links():
     }"""
 
     return output
+
+
 
 print(saida_links())
