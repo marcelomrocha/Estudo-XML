@@ -9,48 +9,48 @@
         "type": "voice",
         "color": "lightblue",
         "isGroup": false,
-        "voice": "en_US_Emily",
+        "voice": "en-US_AllisonV3Voice",
         "__gohashid": 0
       },
       {
         "key": 1001,
-        "name": "Wait_2",
-        "type": "wait",
+        "name": "Light_8",
+        "type": "light",
         "color": "lightblue",
         "isGroup": false,
-        "time": 1234,
+        "group": "",
+        "lcolor": "#FFFFFF",
+        "state": "on",
         "__gohashid": 1
       },
       {
         "key": 1002,
-        "name": "Condition_2",
-        "type": "if",
+        "name": "Talk_1",
+        "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "text": 1,
-        "opt": 4,
+        "text": "Hi, I will choose a number between 1 and 3",
         "__gohashid": 2
       },
       {
         "key": 1003,
-        "name": "Light_8",
-        "type": "light",
+        "name": "Random_10",
+        "type": "random",
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "lcolor": "#0000ff",
-        "state": "on",
+        "min": 1,
+        "max": 3,
         "__gohashid": 3
       },
       {
         "key": 1004,
-        "name": "Light_8",
-        "type": "light",
+        "name": "Condition_2",
+        "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "group": "",
-        "lcolor": "#0000ff",
-        "state": "on",
+        "text": "1",
+        "opt": 4,
         "__gohashid": 4
       },
       {
@@ -60,18 +60,78 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "lcolor": "#0000ff",
+        "lcolor": "#FF0000",
         "state": "on",
         "__gohashid": 5
       },
       {
         "key": 1006,
-        "name": "Wait_2",
-        "type": "wait",
+        "name": "Talk_1",
+        "type": "speak",
         "color": "lightblue",
         "isGroup": false,
-        "time": 1234,
+        "text": "I choose the number $",
         "__gohashid": 6
+      },
+      {
+        "key": 1007,
+        "name": "Condition_2",
+        "type": "if",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "2",
+        "opt": 4,
+        "__gohashid": 7
+      },
+      {
+        "key": 1008,
+        "name": "Light_8",
+        "type": "light",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00FF00",
+        "state": "on",
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Talk_1",
+        "type": "speak",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "I choose the number $",
+        "__gohashid": 9
+      },
+      {
+        "key": 1010,
+        "name": "Condition_2",
+        "type": "if",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "3",
+        "opt": 4,
+        "__gohashid": 10
+      },
+      {
+        "key": 1011,
+        "name": "Light_8",
+        "type": "light",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000FF",
+        "state": "on",
+        "__gohashid": 11
+      },
+      {
+        "key": 1012,
+        "name": "Talk_1",
+        "type": "speak",
+        "color": "lightblue",
+        "isGroup": false,
+        "text": "I choose the number $",
+        "__gohashid": 12
       }
     ],
     "link": []

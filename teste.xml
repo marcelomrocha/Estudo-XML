@@ -1,18 +1,26 @@
 <evaml>
 	<settings>
-		<voice tone="en_US_Emily" key="1000" />
+		<voice tone="en-US_AllisonV3Voice" key="1000" />
 		<lighting-effects mode="on" />
 		<audio-effects mode="on" vol="100%" />
 	</settings>
 	<interaction id="a1001-b3001" name="EvaML_Nodes" key="0">
-		<wait duration="1234" key="1001" />
+		<light state="on" color="#FFFFFF" key="1001" />
+		<talk key="1002">Hi, I will choose a number between 1 and 3</talk>
+		<random min="1" max="3" key="1003" />
 		<switch>
-			<case value="1" key="1002">
-				<light state="on" color="#0000ff" key="1003" />
-				<light state="on" color="#0000ff" key="1004" />
-				<light state="on" color="#0000ff" key="1005" />
+			<case value="1" key="1004">
+				<light state="on" color="#FF0000" key="1005" />
+				<talk key="1006">I choose the number $</talk>
+			</case>
+			<case value="2" key="1007">
+				<light state="on" color="#00FF00" key="1008" />
+				<talk key="1009">I choose the number $</talk>
+			</case>
+			<case value="3" key="1010">
+				<light state="on" color="#0000FF" key="1011" />
+				<talk key="1012">I choose the number $</talk>
 			</case>
 		</switch>
-		<wait duration="1234" key="1006" />
 	</interaction>
 </evaml>

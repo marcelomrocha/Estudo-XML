@@ -228,7 +228,7 @@ def case_process(case_command):
         "type": "if",
         "color": "lightblue",
         "isGroup": false,
-        "text": """ + case_command.attrib['value'] + ',' + """
+        "text": """ + '"' + case_command.attrib['value'] + '",' + """
         "opt": 4,
         "__gohashid": """ + str(gohashid) + """
       }"""
@@ -288,6 +288,7 @@ print("\nTotal interactions found:", len(eva_db_dict["interaccion"]))
 # exibe uma tabela de comandos e chaves
 
 tree.write("teste.xml")
+
 for elem in root.find("settings").iter():
     print(elem.tag, elem.attrib)
 # print("Element\t key")
